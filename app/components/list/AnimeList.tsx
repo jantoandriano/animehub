@@ -23,7 +23,7 @@ const AnimeList: React.FC<Props> = async ({ q, currentPage }) => {
     const data = await getData(q, currentPage)
     return (
         <div>
-            <List heading="Home" data={data.data} />
+            <List heading="Anime List" data={data.data} />
         </div>
     )
 }

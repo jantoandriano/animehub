@@ -74,7 +74,7 @@ const AnimeDetail = async ({ params }: { params: { id: string } }) => {
                                 {data?.synopsis}
                             </p>
                         </div>
-                        <div className="flex -mx-2 mb-4 justify-end">
+                        <div className="flex mt-4 lg:justify-start sm:justify-center sm:items-center">
                             <div className="flex justify-center items-center gap-4 px-2 bg-white text-black py-2 rounded-full font-bold border border-black cursor-pointer hover:shadow-lg hover:border-none">
                                 <a href={data.trailer.url} target="_blank" rel="noopener noreferrer">Trailer</a>
                                 <img src="/icon-play.png" alt="icon-play" className="w-4 h-4 bg-white" />
