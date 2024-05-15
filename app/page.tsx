@@ -1,3 +1,4 @@
+import Example from "./components/example";
 import Hero from "./components/hero/Hero";
 import AnimeList from "./components/list/AnimeList";
 

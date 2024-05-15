@@ -12,7 +12,7 @@ type Data = {
 
 type Props = {
     heading: string;
-    data: Data[]
+    data: Data[] | never[]
 }
 
 const List: React.FC<Props> = ({ heading, data }) => {    

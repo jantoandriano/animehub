@@ -1,29 +1,30 @@
+'use client'
+
 import React from "react";
 import List from "./List";
+import useAnimeList from "@/app/repositories/useAnimeList";
 
 type Props = {
     q: string;
     currentPage: string;
 }
 
-async function getData(q: string, currentPage: string) {    
-    const params = `?limit=10&q=${q}&page=${currentPage}`
-    const res = await fetch(`https://api.jikan.moe/v4/anime${params}`)
-    const data = await res.json();
+const AnimeList: React.FC<Props> = ({ q, currentPage }) => {
+    const { data, error, loading } = useAnimeList(q, currentPage);
 
-    if (!res.ok) {
-        throw new Error('Failed to fetch data')
+    if (!data.length && loading) {
+        return <div>Loading...</div>;
     }
 
-    return data
-}
+    if (error) {
+        return <div>Error: {error}</div>;
+    }
 
+    
 
-const AnimeList: React.FC<Props> = async ({ q, currentPage }) => {
-    const data = await getData(q, currentPage)
     return (
         <div>
-            <List heading="Anime List" data={data.data} />
+            <List heading="Anime List" data={data || []} />
         </div>
     )
 }
