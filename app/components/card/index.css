@@ -5,7 +5,7 @@
         @apply flex flex-col;
     }
     .card-image-container {
-        @apply w-[10rem] h-[15rem] lg:w-52 lg:h-64 lg:bg-red-100 lg:rounded-md;
+        @apply w-[10rem] h-[15rem] lg:w-52 lg:h-64 lg:rounded-md;
     }
     .card-image {
         @apply h-full w-full object-cover object-center lg:h-full lg:w-full;

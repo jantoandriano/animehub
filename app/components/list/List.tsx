@@ -15,7 +15,8 @@ type Props = {
     data: Data[] | never[]
 }
 
-const List: React.FC<Props> = ({ heading, data }) => {    
+const List: React.FC<Props> = ({ heading, data }) => {   
+  
     return (
         <section className="list-container">
             <div className="list-header">

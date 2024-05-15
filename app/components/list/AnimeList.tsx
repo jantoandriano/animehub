@@ -3,6 +3,7 @@
 import React from "react";
 import List from "./List";
 import useAnimeList from "@/app/repositories/useAnimeList";
+import CardSkeleton from "../skeleton/CardSkeleton";
 
 type Props = {
     q: string;
@@ -10,21 +11,23 @@ type Props = {
 }
 
 const AnimeList: React.FC<Props> = ({ q, currentPage }) => {
-    const { data, error, loading } = useAnimeList(q, currentPage);
+    const { data, loading } = useAnimeList(q, currentPage);
 
-    if (!data.length && loading) {
-        return <div>Loading...</div>;
+    if (loading) {
+        return (
+            <div className="flex flex-wrap gap-7 py-8 justify-center items-center lg:flex bg-white max-w-screen-xl lg:px-4 lg:py-8 lg:mx-auto lg:flex-wrap" >
+                {
+                    Array.from(Array(10).keys()).map(val => (
+                        <CardSkeleton key={val} />
+                    ))
+                }
+            </div>
+        )
     }
-
-    if (error) {
-        return <div>Error: {error}</div>;
-    }
-
-    
 
     return (
         <div>
-            <List heading="Anime List" data={data || []} />
+            <List heading="Anime List" data={data} />
         </div>
     )
 }
