@@ -64,3 +64,10 @@ To run the tests, use the following command:
 
 ```bash
 npm run test
+```
+
+
+## NOTE
+
+There is a lot i need to improve one of the reason im looking for new opportunity that want to upgraded my skill as a Frontend Developer specially when comes to unit testing and E2E testing, using graphql, and other things.
+
